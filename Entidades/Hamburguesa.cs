@@ -17,14 +17,16 @@ namespace Entidades
             Hamburguesa.costoBase = 1500;
         }        
 
-        public Hamburguesa(string nombre) : base(nombre)
-        {
+        public Hamburguesa(string nombre) : base(nombre) { }
 
+        public Hamburguesa(string nombre, bool esDoble) : this(nombre)
+        {            
+            this.esDoble = esDoble;
         }
 
         protected override string AgregarIngrediente(EIngredientes ingrediente)
         {
-            if (!this.ingredientes.Contains(ingrediente))
+            if (!this.ingredientes.Contains(ingrediente,))
             {
                 this.ingredientes.Add(ingrediente);
                 return $"{ingrediente} agregado a hamburguesa";
